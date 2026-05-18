@@ -336,4 +336,3 @@ else:
         st.success(
             "🥈 RANK B — ANALISTA"
         )
-```
