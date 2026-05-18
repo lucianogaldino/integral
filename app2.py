@@ -67,7 +67,7 @@ if "pontos" not in st.session_state:
     st.session_state.pontos = 0
 
 if "vidas" not in st.session_state:
-    st.session_state.vidas = 3
+    st.session_state.vidas = 8
 
 # =========================
 # FASES
