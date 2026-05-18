@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/16oQwn5JIohzBiSWAUrC8lY1uATwW9SRp
 """
 
-```python id="x9m2qd"
 import streamlit as st
 import sympy as sp
 
