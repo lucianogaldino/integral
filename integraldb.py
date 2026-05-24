@@ -272,7 +272,9 @@ fases = {
             "Determine o volume total "
             "de dados transferidos.",
 
-        "pontos": 450
+        "pontos": 450,
+        "taxa": True,
+        "variavel": "D"
     },
 
     9: {
@@ -295,7 +297,9 @@ fases = {
             "Calcule a quantidade total "
             "de dados ingeridos pelo sistema.",
 
-        "pontos": 700
+        "pontos": 700,
+        "taxa": True,
+        "variavel": "D"
     },
 
     10: {
@@ -321,7 +325,7 @@ fases = {
             "Calcule a área entre as duas "
             "funções no intervalo dado.",
 
-        "pontos": 300,
+        "pontos": 1000,
 
         "duas_funcoes": True
     }
