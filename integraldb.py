@@ -151,7 +151,7 @@ fases = {
 
         "historia":
             "A criptografia do sistema requer "
-            "a resolução de cálculo integral para determinar o volume de dados descriptografados.",
+            " a resolução de cálculo integral para determinar o volume de dados descriptografados.",
 
         "enunciado":
             "A taxa de descriptografia "
@@ -245,7 +245,7 @@ fases = {
 
         "pergunta":
             "Calcule o total de pacotes "
-            "recebidos durante o ataque entre 4 e 16 entradas.",
+            "recebidos durante o ataque entre 4h e 16h.",
 
         "pontos": 400,
         "taxa": True,
