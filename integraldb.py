@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # =====================================================
 # INTEGRALDB — VERSÃO STREAMLIT
 # =====================================================
@@ -294,33 +293,33 @@ fases = {
 
         "pontos": 700
     },
-    
+
     10: {
-    "nome": "SINCRONIZAÇÃO DE SERVIDORES",
+        "nome": "SINCRONIZAÇÃO DE SERVIDORES",
 
-    "historia":
-        "Dois servidores da corporação "
-        "processam pacotes simultaneamente.",
+        "historia":
+            "Dois servidores da corporação "
+            "processam pacotes simultaneamente.",
 
-    "enunciado":
-        "A taxa de processamento do "
-        "Servidor A e do Servidor B "
-        "é modelada pelas funções:",
+        "enunciado":
+            "A taxa de processamento do "
+            "Servidor A e do Servidor B "
+            "é modelada pelas funções:",
 
-    "funcao1": -0.1*x**2 + 2*x + 5,
+        "funcao1": -0.1*x**2 + 2*x + 5,
 
-    "funcao2": 0.5*x + 2,
+        "funcao2": 0.5*x + 2,
 
-    "a": 0,
-    "b": 10,
+        "a": 0,
+        "b": 10,
 
-    "pergunta":
-        "Calcule a área entre as duas "
-        "funções no intervalo dado.",
+        "pergunta":
+            "Calcule a área entre as duas "
+            "funções no intervalo dado.",
 
-    "pontos": 300,
+        "pontos": 300,
 
-    "duas_funcoes": True
+        "duas_funcoes": True
     }
 }
 
@@ -345,24 +344,6 @@ if st.session_state.fase > len(fases):
         f"Pontuação Final: "
         f"{st.session_state.pontos}"
     )
-
-    if st.session_state.pontos >= 1800:
-
-        st.success(
-            "🏆 RANK S — ANALISTA LENDÁRIO"
-        )
-
-    elif st.session_state.pontos >= 1200:
-
-        st.success(
-            "🥇 RANK A — ESPECIALISTA"
-        )
-
-    else:
-
-        st.success(
-            "🥈 RANK B — ANALISTA"
-        )
 
     st.balloons()
 
@@ -422,14 +403,28 @@ st.write(fase["enunciado"])
 # INTEGRAL
 # =====================================================
 
-st.latex(
-    sp.latex(
-        sp.Integral(
-            fase["funcao"],
-            (x, fase["a"], fase["b"])
+if "duas_funcoes" in fase:
+
+    st.latex(
+        sp.latex(
+            sp.Integral(
+                fase["funcao1"]
+                - fase["funcao2"],
+                (x, fase["a"], fase["b"])
+            )
         )
     )
-)
+
+else:
+
+    st.latex(
+        sp.latex(
+            sp.Integral(
+                fase["funcao"],
+                (x, fase["a"], fase["b"])
+            )
+        )
+    )
 
 # =====================================================
 # PERGUNTA
@@ -441,86 +436,93 @@ st.write(fase["pergunta"])
 # GRÁFICO
 # =====================================================
 
-f = sp.lambdify(
-    x,
-    fase["funcao"],
-    "numpy"
-)
+if "duas_funcoes" in fase:
 
-x_vals = np.linspace(
-    fase["a"],
-    fase["b"],
-    400
-)
-
-y_vals = f(x_vals)
-
-fig, ax = plt.subplots(figsize=(8,4))
-
-ax.plot(x_vals, y_vals)
-
-ax.fill_between(
-    x_vals,
-    y_vals,
-    alpha=0.3
-)
-
-ax.set_title("Área Sob a Curva")
-
-ax.grid()
-
-st.pyplot(fig)
-
-# =====================================================
-# INSTRUÇÕES
-# =====================================================
-
-st.info(
-    "📌 Digite apenas valores numéricos "
-    "com até 2 casas decimais."
-)
-
-# =====================================================
-# SUBSTITUIÇÃO
-# =====================================================
-
-escolha_u = None
-
-if "substituicao" in fase:
-
-    escolha_u = st.radio(
-        "Escolha u:",
-        [
-            "x**2 + 1",
-            "2*x",
-            "x**5"
-        ]
+    f1 = sp.lambdify(
+        x,
+        fase["funcao1"],
+        "numpy"
     )
 
-# =====================================================
-# POR PARTES
-# =====================================================
-
-escolha_u_partes = None
-escolha_dv = None
-
-if "partes" in fase:
-
-    escolha_u_partes = st.radio(
-        "Escolha u:",
-        [
-            "x",
-            "exp(x)"
-        ]
+    f2 = sp.lambdify(
+        x,
+        fase["funcao2"],
+        "numpy"
     )
 
-    escolha_dv = st.radio(
-        "Escolha dv:",
-        [
-            "x",
-            "exp(x)"
-        ]
+    x_vals = np.linspace(
+        fase["a"],
+        fase["b"],
+        400
     )
+
+    y1 = f1(x_vals)
+    y2 = f2(x_vals)
+
+    fig, ax = plt.subplots(figsize=(8,4))
+
+    ax.plot(
+        x_vals,
+        y1,
+        label="Servidor A"
+    )
+
+    ax.plot(
+        x_vals,
+        y2,
+        label="Servidor B"
+    )
+
+    ax.fill_between(
+        x_vals,
+        y1,
+        y2,
+        alpha=0.3
+    )
+
+    ax.legend()
+
+    ax.grid()
+
+    ax.set_title(
+        "Área Entre as Curvas"
+    )
+
+    st.pyplot(fig)
+
+else:
+
+    f = sp.lambdify(
+        x,
+        fase["funcao"],
+        "numpy"
+    )
+
+    x_vals = np.linspace(
+        fase["a"],
+        fase["b"],
+        400
+    )
+
+    y_vals = f(x_vals)
+
+    fig, ax = plt.subplots(figsize=(8,4))
+
+    ax.plot(x_vals, y_vals)
+
+    ax.fill_between(
+        x_vals,
+        y_vals,
+        alpha=0.3
+    )
+
+    ax.grid()
+
+    ax.set_title(
+        "Área Sob a Curva"
+    )
+
+    st.pyplot(fig)
 
 # =====================================================
 # INPUT
@@ -531,7 +533,7 @@ resposta = st.text_input(
 )
 
 # =====================================================
-# BOTÃO ENVIAR
+# BOTÃO
 # =====================================================
 
 if not st.session_state.fase_liberada:
@@ -540,8 +542,6 @@ if not st.session_state.fase_liberada:
 
         try:
 
-            resposta = resposta.replace("^", "**")
-
             resposta_usuario = round(
                 float(
                     sp.sympify(resposta)
@@ -549,28 +549,51 @@ if not st.session_state.fase_liberada:
                 2
             )
 
-            valor_correto = round(
-                float(
-                    sp.integrate(
-                        fase["funcao"],
-                        (
-                            x,
-                            fase["a"],
-                            fase["b"]
+            # =================================================
+            # ÁREA ENTRE CURVAS
+            # =================================================
+
+            if "duas_funcoes" in fase:
+
+                valor_correto = round(
+                    float(
+                        sp.integrate(
+                            fase["funcao1"]
+                            - fase["funcao2"],
+                            (
+                                x,
+                                fase["a"],
+                                fase["b"]
+                            )
                         )
-                    )
-                ),
-                2
-            )
+                    ),
+                    2
+                )
+
+            else:
+
+                valor_correto = round(
+                    float(
+                        sp.integrate(
+                            fase["funcao"],
+                            (
+                                x,
+                                fase["a"],
+                                fase["b"]
+                            )
+                        )
+                    ),
+                    2
+                )
 
             correto = abs(
                 resposta_usuario
                 - valor_correto
             ) < 0.1
 
-            # =============================================
+            # =================================================
             # SUBSTITUIÇÃO
-            # =============================================
+            # =================================================
 
             if "substituicao" in fase:
 
@@ -580,9 +603,9 @@ if not st.session_state.fase_liberada:
                     == fase["u_correto"]
                 )
 
-            # =============================================
+            # =================================================
             # POR PARTES
-            # =============================================
+            # =================================================
 
             if "partes" in fase:
 
@@ -595,9 +618,9 @@ if not st.session_state.fase_liberada:
                     == fase["dv_correto"]
                 )
 
-            # =============================================
+            # =================================================
             # RESULTADO
-            # =============================================
+            # =================================================
 
             if correto:
 
