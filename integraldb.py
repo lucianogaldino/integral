@@ -245,9 +245,11 @@ fases = {
 
         "pergunta":
             "Calcule o total de pacotes "
-            "recebidos durante o ataque.",
+            "recebidos durante o ataque entre 4 e 16 entradas.",
 
-        "pontos": 400
+        "pontos": 400,
+        "taxa": True,
+        "variavel": "D"
     },
 
     8: {
