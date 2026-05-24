@@ -525,6 +525,48 @@ else:
     st.pyplot(fig)
 
 # =====================================================
+# SUBSTITUIÇÃO
+# =====================================================
+
+escolha_u = None
+
+if "substituicao" in fase:
+
+    escolha_u = st.radio(
+        "Escolha u:",
+        [
+            "x**2 + 1",
+            "2*x",
+            "x**5"
+        ]
+    )
+
+# =====================================================
+# POR PARTES
+# =====================================================
+
+escolha_u_partes = None
+escolha_dv = None
+
+if "partes" in fase:
+
+    escolha_u_partes = st.radio(
+        "Escolha u:",
+        [
+            "x",
+            "exp(x)"
+        ]
+    )
+
+    escolha_dv = st.radio(
+        "Escolha dv:",
+        [
+            "x",
+            "exp(x)"
+        ]
+    )
+    
+# =====================================================
 # INPUT
 # =====================================================
 
