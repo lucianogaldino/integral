@@ -403,16 +403,28 @@ st.write(fase["enunciado"])
 # INTEGRAL
 # =====================================================
 
+# =====================================================
+# EXPRESSÕES MATEMÁTICAS
+# =====================================================
+
 if "duas_funcoes" in fase:
 
     st.latex(
-        sp.latex(
-            sp.Integral(
-                fase["funcao1"]
-                - fase["funcao2"],
-                (x, fase["a"], fase["b"])
-            )
-        )
+        "f(x)="
+        + sp.latex(fase["funcao1"])
+    )
+
+    st.latex(
+        "g(x)="
+        + sp.latex(fase["funcao2"])
+    )
+
+    st.write(
+        "Considere o intervalo:"
+    )
+
+    st.latex(
+        f"{fase['a']} \\leq x \\leq {fase['b']}"
     )
 
 else:
