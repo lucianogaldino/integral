@@ -223,6 +223,8 @@ fases = {
             "do cache entre 6h e 18h.",
 
         "pontos": 350
+        "taxa": True,
+        "variavel": "D"
     },
 
     7: {
@@ -407,6 +409,10 @@ st.write(fase["enunciado"])
 # EXPRESSÕES MATEMÁTICAS
 # =====================================================
 
+# =====================================================
+# ÁREA ENTRE CURVAS
+# =====================================================
+
 if "duas_funcoes" in fase:
 
     st.latex(
@@ -426,6 +432,26 @@ if "duas_funcoes" in fase:
     st.latex(
         f"{fase['a']} \\leq x \\leq {fase['b']}"
     )
+
+# =====================================================
+# QUESTÕES DE TAXA
+# =====================================================
+
+elif "taxa" in fase:
+
+    variavel = fase.get(
+        "variavel",
+        "D"
+    )
+
+    st.latex(
+        rf"\frac{{d{variavel}}}{{dt}}="
+        + sp.latex(fase["funcao"])
+    )
+
+# =====================================================
+# QUESTÕES NORMAIS
+# =====================================================
 
 else:
 
