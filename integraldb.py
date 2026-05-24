@@ -270,7 +270,7 @@ fases = {
 
         "pergunta":
             "Determine o volume total "
-            "de dados transferidos.",
+            "de dados transferidos entre x=2 a x=8.",
 
         "pontos": 450,
         "taxa": True,
@@ -295,7 +295,7 @@ fases = {
 
         "pergunta":
             "Calcule a quantidade total "
-            "de dados ingeridos pelo sistema.",
+            "de dados ingeridos pelo sistema entre 0 e 5.",
 
         "pontos": 700,
         "taxa": True,
