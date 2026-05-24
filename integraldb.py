@@ -204,31 +204,6 @@ fases = {
     },
 
     6: {
-        "nome": "PROCESSAMENTO DE REGISTROS",
-
-        "historia":
-            "Os servidores da corporação "
-            "estão sobrecarregados.",
-
-        "enunciado":
-            "Uma central de banco de dados "
-            "monitora a taxa de transferência "
-            "de registros entre servidores.",
-
-        "funcao": -0.02*x**2 + 0.14*x + 1.96,
-
-        "a": 8,
-        "b": 20,
-
-        "pergunta":
-            "Qual foi a quantidade total "
-            "de registros processados "
-            "entre 8h e 20h?",
-
-        "pontos": 300
-    },
-
-    7: {
         "nome": "EXPANSÃO DE CACHE",
 
         "historia":
@@ -251,7 +226,7 @@ fases = {
         "pontos": 350
     },
 
-    8: {
+    7: {
         "nome": "TRÁFEGO DO FIREWALL",
 
         "historia":
@@ -274,7 +249,7 @@ fases = {
         "pontos": 400
     },
 
-    9: {
+    8: {
         "nome": "BACKUP AUTOMÁTICO",
 
         "historia":
@@ -297,7 +272,7 @@ fases = {
         "pontos": 450
     },
 
-    10: {
+    9: {
         "nome": "INGESTÃO BIG DATA",
 
         "historia":
@@ -318,8 +293,35 @@ fases = {
             "de dados ingeridos pelo sistema.",
 
         "pontos": 700
-    }
+    },
+    
+    10: {
+    "nome": "SINCRONIZAÇÃO DE SERVIDORES",
 
+    "historia":
+        "Dois servidores da corporação "
+        "processam pacotes simultaneamente.",
+
+    "enunciado":
+        "A taxa de processamento do "
+        "Servidor A e do Servidor B "
+        "é modelada pelas funções:",
+
+    "funcao1": -0.1*x**2 + 2*x + 5,
+
+    "funcao2": 0.5*x + 2,
+
+    "a": 0,
+    "b": 10,
+
+    "pergunta":
+        "Calcule a área entre as duas "
+        "funções no intervalo dado.",
+
+    "pontos": 300,
+
+    "duas_funcoes": True
+    }
 }
 
 # =====================================================
