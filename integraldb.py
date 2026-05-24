@@ -542,6 +542,16 @@ if not st.session_state.fase_liberada:
 
         try:
 
+            # =================================================
+            # TRATAMENTO DA RESPOSTA
+            # =================================================
+
+            resposta = (
+                resposta
+                .replace(",", ".")
+                .replace("^", "**")
+            )
+
             resposta_usuario = round(
                 float(
                     sp.sympify(resposta)
