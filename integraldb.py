@@ -150,8 +150,8 @@ fases = {
         "nome": "NÚCLEO DE DESCRIPTOGRAFIA",
 
         "historia":
-            "A criptografia do sistema usa "
-            "integração por substituição.",
+            "A criptografia do sistema requer "
+            "a resolução de cálculo integral para determinar o volume de dados descriptografados.",
 
         "enunciado":
             "A taxa de descriptografia "
@@ -177,8 +177,8 @@ fases = {
         "nome": "MAINFRAME CENTRAL",
 
         "historia":
-            "O núcleo do servidor requer "
-            "integração por partes.",
+            "O núcleo do servidor requer a"
+            "resolução de integrais para determinar o total de processos sincronizados.",
 
         "enunciado":
             "A taxa de sincronização "
@@ -191,7 +191,7 @@ fases = {
 
         "pergunta":
             "Determine o total de processos "
-            "sincronizados.",
+            "sincronizados para liberação do núcleo do servidor.",
 
         "pontos": 1000,
 
