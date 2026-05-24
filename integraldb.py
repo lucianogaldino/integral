@@ -222,7 +222,7 @@ fases = {
             "Determine o crescimento total "
             "do cache entre 6h e 18h.",
 
-        "pontos": 350
+        "pontos": 350,
         "taxa": True,
         "variavel": "D"
     },
