@@ -53,7 +53,6 @@ h1, h2, h3, h4 {
 # =====================================================
 
 x = sp.symbols('x')
-t = sp.symbols('t')
 
 # =====================================================
 # SESSION STATE
@@ -214,7 +213,7 @@ fases = {
             "A taxa de crescimento do cache "
             "de consultas do banco é:",
 
-        "funcao": -0.005*t**2 + 0.2*t + 1.5,
+        "funcao": -0.005*x**2 + 0.2*x + 1.5,
 
         "a": 6,
         "b": 18,
@@ -446,7 +445,7 @@ elif "taxa" in fase:
     )
 
     st.latex(
-        rf"\frac{{d{variavel}}}{{dt}}="
+        rf"\frac{{d{variavel}}}{{dx}}="
         + sp.latex(fase["funcao"])
     )
 
