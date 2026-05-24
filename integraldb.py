@@ -85,7 +85,7 @@ fases = {
         "enunciado":
             "O sistema monitora a taxa de "
             "crescimento do armazenamento "
-            "de logs ao longo do tempo.",
+            "de logs ao longo do tempo (x).",
 
         "funcao": x**2,
 
@@ -93,7 +93,7 @@ fases = {
         "b": 2,
 
         "pergunta":
-            "Calcule a quantidade total "
+            "Para retornar os registros, determine a quantidade total "
             "de dados acumulados entre "
             "0h e 2h.",
 
@@ -109,7 +109,7 @@ fases = {
 
         "enunciado":
             "A taxa de recuperação de dados "
-            "das tabelas é dada pela função:",
+            "das tabelas é dada pela integral:",
 
         "funcao": 3*x**2 + 5,
 
@@ -140,8 +140,8 @@ fases = {
         "b": 2,
 
         "pergunta":
-            "Calcule o total de pacotes "
-            "processados pelo firewall.",
+            "Determine o total de pacotes "
+            "processados pelo firewall para desbloquear o acesso.",
 
         "pontos": 250
     },
@@ -190,7 +190,7 @@ fases = {
         "b": 1,
 
         "pergunta":
-            "Calcule o total de processos "
+            "Determine o total de processos "
             "sincronizados.",
 
         "pontos": 1000,
@@ -210,7 +210,7 @@ fases = {
             "está crescendo rapidamente.",
 
         "enunciado":
-            "A taxa de crescimento do cache "
+            "A taxa de crescimento do cache por hora (x) "
             "de consultas do banco é:",
 
         "funcao": -0.005*x**2 + 0.2*x + 1.5,
@@ -270,7 +270,7 @@ fases = {
 
         "pergunta":
             "Determine o volume total "
-            "de dados transferidos entre x=2 a x=8.",
+            "de dados transferidos entre x=2min a x=8min.",
 
         "pontos": 450,
         "taxa": True,
@@ -295,7 +295,7 @@ fases = {
 
         "pergunta":
             "Calcule a quantidade total "
-            "de dados ingeridos pelo sistema entre 0 e 5.",
+            "de dados ingeridos pelo sistema até atingir 5 min.",
 
         "pontos": 700,
         "taxa": True,
@@ -322,8 +322,8 @@ fases = {
         "b": 10,
 
         "pergunta":
-            "Calcule a área entre as duas "
-            "funções no intervalo dado.",
+            "Determine a área entre as duas "
+            "funções no intervalo dado para sincronizar os servidores.",
 
         "pontos": 1000,
 
