@@ -615,7 +615,7 @@ if "partes" in fase:
 # =====================================================
 
 resposta = st.text_input(
-    "Digite sua resposta:"
+    "Digite sua resposta (arredondamento de 2 casas decimais):"
 )
 
 # =====================================================
